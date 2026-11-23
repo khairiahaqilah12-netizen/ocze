@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-ocze-lavender: #E9E1F3;
+  --color-ocze-lavender-soft: #F6F2FB;
+  --color-ocze-purple: #A092C5;
+  --color-ocze-purple-deep: #6D5D9B;
+  --color-ocze-pink: #D5A0BD;
+  --color-ocze-pink-soft: #F7EAF1;
+  --color-ocze-ink: #221E2C;
+  --color-ocze-muted: #635B73;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    color: #221E2C;
+    background-color: #FAF8FD;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
